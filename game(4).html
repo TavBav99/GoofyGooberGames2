@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Math - Game 4</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            transform: scale(1.5);  /* Adjust this value to zoom in or out */
+            transform-origin: 0 0; /* Ensures iframe scales from the top-left corner */
+        }
+    </style>
+</head>
+<body>
+
+    <iframe src="https://lolv1.netlify.app" allow="fullscreen;geolocation;microphone;camera" id="gameIframe"></iframe>
+
+    <script>
+        // Fix input issue for the iframe
+        document.getElementById('gameIframe').contentWindow.document.body.addEventListener('mouseenter', function() {
+            const iframe = document.getElementById('gameIframe');
+            iframe.contentWindow.focus();  // Focus on the iframe to allow input
+        });
+    </script>
+
+</body>
+</html>

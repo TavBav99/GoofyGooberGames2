@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Math - Game2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        iframe {
+            width: 100vw;  /* 100% of the viewport width */
+            height: 100vh; /* 100% of the viewport height */
+            border: none;
+            pointer-events: auto; /* Ensures interactions inside the iframe are allowed */
+        }
+    </style>
+</head>
+<body>
+    <!-- Add tabindex to iframe -->
+    <iframe src="https://eagrg.netlify.app/eagler-files/1.5.2/main/" 
+            title="Eagler Files" 
+            allowfullscreen 
+            allow="autoplay; encrypted-media; fullscreen; picture-in-picture; allow-scripts; allow-forms"
+            tabindex="0"></iframe>
+</body>
+
+<script>
+    window.onload = function() {
+        var iframe = document.querySelector('iframe');
+        iframe.contentWindow.focus();  // Focus the iframe
+    };
+</script>
+
+</html>

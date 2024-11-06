@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Math Games</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #665FD1;
+            margin: 0;
+            padding: 20px;
+            filter: blur(2px); /* Initial blur */
+            transition: filter 0.1s ease; /* Faster blur transition */
+        }
+
+        /* Body will be blurred when navigating away */
+        body.loaded {
+            filter: blur(0);
+        }
+
+        /* Style for the Home button in the top center */
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%); /* Center the button horizontally */
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 10; /* Keep it on top of other elements */
+        }
+
+        .home-button:hover {
+            background-color: #cc0000;
+        }
+
+        h1 {
+            margin-top: 60px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .game-button {
+            width: 150px;
+            text-align: center;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .game-button:hover {
+            transform: scale(1.05);
+        }
+
+        .game-button img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .game-title {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Button at the top center -->
+    <button class="home-button" onclick="goHome()">Home</button>
+
+    <h1>Select a Game</h1>
+    <div class="button-container">
+        <!-- Game 1 Button -->
+        <button class="game-button" onclick="goToGame('game(1).html')">
+            <img src="images/game1.jpg" alt="Game 1">
+            <div class="game-title">Baldi's Basics</div>
+        </button>
+
+        <!-- Game 2 Button -->
+        <button class="game-button" onclick="goToGame('game(2).html')">
+            <img src="images/game2.jpg" alt="Game 2">
+            <div class="game-title">Minecraft 1.5.2</div>
+        </button>
+
+        <!-- Game 3 Button -->
+        <button class="game-button" onclick="goToGame('game(3).html')">
+            <img src="images/game3.jpg" alt="Game 3">
+            <div class="game-title">Half Life</div>
+        </button>
+
+        <!-- Game 4 Button -->
+        <button class="game-button" onclick="goToGame('game(4).html')">
+            <img src="images/game4.jpg" alt="Game 4">
+            <div class="game-title">1v1.LOL</div>
+        </button>
+
+        <!-- Game 5 Button -->
+        <button class="game-button" onclick="goToGame('game(5).html')">
+            <img src="images/game5.jpg" alt="Game 5">
+            <div class="game-title">Tomb Of The Mask</div>
+        </button>
+
+		<!-- Game 6 Button -->
+        <button class="game-button" onclick="goToGame('game(6).html')">
+            <img src="images/game6.jpg" alt="Game 6">
+            <div class="game-title">GladiHoppers</div>
+        </button>
+    </div>
+
+    <script>
+        // Function to trigger blur effect before navigating
+        function goToGame(gameUrl) {
+            document.body.style.filter = 'blur(2px)'; // Apply blur effect
+
+            // Delay the navigation to allow blur effect to show
+            setTimeout(function() {
+                window.location.href = gameUrl; // Navigate to the selected game
+            }, 100); // Faster transition, 100ms for blur
+        }
+
+        // Function to navigate back to the home page with blur effect
+        function goHome() {
+            document.body.style.filter = 'blur(2px)'; // Apply blur effect
+
+            // Delay the navigation to allow blur effect to show
+            setTimeout(function() {
+                window.location.href = "indexmath.html"; // Navigate to home page
+            }, 100); // Faster transition, 100ms for blur
+        }
+
+        // Remove the blur effect after the page has loaded
+        window.onload = function() {
+            document.body.classList.add('loaded');
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Math</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            overflow: auto;
+            filter: blur(2px); /* Initial blur */
+            transition: filter 0.1s ease; /* Faster blur transition */
+        }
+
+        /* Remove blur after page has loaded */
+        body.loaded {
+            filter: blur(0);
+        }
+
+        .top-right-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .top-right-button:hover {
+            background-color: #cc0000;
+        }
+
+        .summary {
+            max-width: 1200px;
+            margin-top: 60px;
+            font-size: 48px;
+            line-height: 1.8;
+            color: #333;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="summary">
+        <h1>Welcome to Index Math</h1>
+        <h2>Understanding Indexes</h2>
+        <p>This page is all about helping kids understand what an index is and how it can help them find information quickly. An index is like a map that guides you to the right page or topic without searching the entire content. Kids can use this to learn faster and find exactly what they need!</p>
+        <h2>Explore and Learn</h2>
+        <p>With "Index Math," they can explore different math games and resources easily, learning about organization and quick searching as they have fun with numbers.</p>
+    </div>
+
+    <!-- Button to navigate to Index Math Games -->
+    <button class="top-right-button" onclick="goToIndexGames()">Go to Index Math Games</button>
+
+    <script>
+        // Function to trigger blur effect before navigating
+        function goToIndexGames() {
+            document.body.style.filter = 'blur(2px)'; // Apply blur effect
+
+            // Delay the navigation to allow blur effect to show
+            setTimeout(function() {
+                window.location.href = "indexmathgames.html"; // Navigate to the game page
+            }, 100); // Faster transition, 100ms for blur
+        }
+
+        window.onload = function() {
+            document.body.classList.add('loaded'); // Remove blur when the page is loaded
+        };
+    </script>
+</body>
+</html>
