@@ -14,21 +14,19 @@
             background-color: #665FD1;
             margin: 0;
             padding: 20px;
-            filter: blur(2px); /* Initial blur */
-            transition: filter 0.1s ease; /* Faster blur transition */
+            filter: blur(2px);
+            transition: filter 0.1s ease;
         }
 
-        /* Body will be blurred when navigating away */
         body.loaded {
             filter: blur(0);
         }
 
-        /* Style for the Home button in the top center */
         .home-button {
             position: absolute;
             top: 20px;
             left: 50%;
-            transform: translateX(-50%); /* Center the button horizontally */
+            transform: translateX(-50%);
             padding: 10px 20px;
             font-size: 16px;
             background-color: #ff4d4d;
@@ -37,7 +35,7 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
-            z-index: 10; /* Keep it on top of other elements */
+            z-index: 10;
         }
 
         .home-button:hover {
@@ -83,106 +81,109 @@
     </style>
 </head>
 <body>
-    <!-- Home Button at the top center -->
     <button class="home-button" onclick="goHome()">Home</button>
 
     <div class="button-container">
-    <!-- Game 1 Button -->
-    <button class="game-button" onclick="goToGame('game(1).html')">
-        <img src="game1.jpg" alt="Game 1">
-        <div class="game-title">Baldi's Basics</div>
-    </button>
+        <!-- Existing Game Buttons -->
+        <button class="game-button" onclick="goToGame('game(1).html')">
+            <img src="game1.jpg" alt="Game 1">
+            <div class="game-title">Baldi's Basics</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(2).html')">
+            <img src="game2.jpg" alt="Game 2">
+            <div class="game-title">Minecraft 1.5.2</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(3).html')">
+            <img src="game3.jpg" alt="Game 3">
+            <div class="game-title">Half Life</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(4).html')">
+            <img src="game4.jpg" alt="Game 4">
+            <div class="game-title">1v1.LOL</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(5).html')">
+            <img src="game5.jpg" alt="Game 5">
+            <div class="game-title">Tomb Of The Mask</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(6).html')">
+            <img src="game6.jpg" alt="Game 6">
+            <div class="game-title">GladiHoppers</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(7).html')">
+            <img src="game7.jpg" alt="Game 7">
+            <div class="game-title">Doom 1</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(8).html')">
+            <img src="game8.jpg" alt="Game 8">
+            <div class="game-title">Astra MC 1.8</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(9).html')">
+            <img src="game9.jpg" alt="Game 9">
+            <div class="game-title">Doodle Jump</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(10).html')">
+            <img src="game10.jpg" alt="Game 10">
+            <div class="game-title">Fnaf 3</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(11).html')">
+            <img src="game11.jpg" alt="Game 11">
+            <div class="game-title">Terraria</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(12).html')">
+            <img src="game12.jpg" alt="Game 12">
+            <div class="game-title">Sort The Court</div>
+        </button>
 
-    <!-- Game 2 Button -->
-    <button class="game-button" onclick="goToGame('game(2).html')">
-        <img src="game2.jpg" alt="Game 2">
-        <div class="game-title">Minecraft 1.5.2</div>
-    </button>
-
-    <!-- Game 3 Button -->
-    <button class="game-button" onclick="goToGame('game(3).html')">
-        <img src="game3.jpg" alt="Game 3">
-        <div class="game-title">Half Life</div>
-    </button>
-
-    <!-- Game 4 Button -->
-    <button class="game-button" onclick="goToGame('game(4).html')">
-        <img src="game4.jpg" alt="Game 4">
-        <div class="game-title">1v1.LOL</div>
-    </button>
-
-    <!-- Game 5 Button -->
-    <button class="game-button" onclick="goToGame('game(5).html')">
-        <img src="game5.jpg" alt="Game 5">
-        <div class="game-title">Tomb Of The Mask</div>
-    </button>
-
-    <!-- Game 6 Button -->
-    <button class="game-button" onclick="goToGame('game(6).html')">
-        <img src="game6.jpg" alt="Game 6">
-        <div class="game-title">GladiHoppers</div>
-    </button>
-
-    <!-- Game 7 Button -->
-    <button class="game-button" onclick="goToGame('game(7).html')">
-        <img src="game7.jpg" alt="Game 7">
-        <div class="game-title">Doom 1</div>
-    </button>
-
-    <!-- Game 8 Button -->
-    <button class="game-button" onclick="goToGame('game(8).html')">
-        <img src="game8.jpg" alt="Game 8">
-        <div class="game-title">Astra MC 1.8</div>
-    </button>
-
-    <!-- Game 9 Button -->
-    <button class="game-button" onclick="goToGame('game(9).html')">
-        <img src="game9.jpg" alt="Game 9">
-        <div class="game-title">Doodle Jump</div>
-    </button>
-
-    <!-- Game 10 Button -->
-    <button class="game-button" onclick="goToGame('game(10).html')">
-        <img src="game10.jpg" alt="Game 10">
-        <div class="game-title">Fnaf 3</div>
-    </button>
-
-    <!-- Game 11 Button -->
-    <button class="game-button" onclick="goToGame('game(11).html')">
-        <img src="game11.jpg" alt="Game 11">
-        <div class="game-title">Terraria</div>
-    </button>
-
-    <!-- Game 12 Button -->
-    <button class="game-button" onclick="goToGame('game(12).html')">
-        <img src="game12.jpg" alt="Game 12">
-        <div class="game-title">Sort The Court</div>
-    </button>
-</div>
-
+        <!-- New Game Buttons -->
+        <button class="game-button" onclick="goToGame('game(13).html')">
+            <img src="game13.jpg" alt="Game 13">
+            <div class="game-title">Diep</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(14).html')">
+            <img src="game14.jpg" alt="Game 14">
+            <div class="game-title">Drive Mad</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(15).html')">
+            <img src="game15.jpg" alt="Game 15">
+            <div class="game-title">Eggy Car</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(16).html')">
+            <img src="game16.jpg" alt="Game 16">
+            <div class="game-title">Fruit Ninja</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(17).html')">
+            <img src="game17.jpg" alt="Game 17">
+            <div class="game-title">Stickman Hook</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(18).html')">
+            <img src="game18.jpg" alt="Game 18">
+            <div class="game-title">Mr.Bullet</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(19).html')">
+            <img src="game19.jpg" alt="Game 19">
+            <div class="game-title">OvO</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(20).html')">
+            <img src="game20.jpg" alt="Game 20">
+            <div class="game-title">Run 3</div>
+        </button>
+    </div>
 
     <script>
-        // Function to trigger blur effect before navigating
         function goToGame(gameUrl) {
-            document.body.style.filter = 'blur(2px)'; // Apply blur effect
-
-            // Delay the navigation to allow blur effect to show
+            document.body.style.filter = 'blur(2px)';
             setTimeout(function() {
-                window.location.href = gameUrl; // Navigate to the selected game
-            }, 100); // Faster transition, 100ms for blur
+                window.location.href = gameUrl;
+            }, 100);
         }
 
-        // Function to navigate back to the home page with blur effect
         function goHome() {
-            document.body.style.filter = 'blur(2px)'; // Apply blur effect
-
-            // Delay the navigation to allow blur effect to show
+            document.body.style.filter = 'blur(2px)';
             setTimeout(function() {
-                window.location.href = "indexmath.html"; // Navigate to home page
-            }, 100); // Faster transition, 100ms for blur
+                window.location.href = "indexmath.html";
+            }, 100);
         }
 
-        // Remove the blur effect after the page has loaded
         window.onload = function() {
             document.body.classList.add('loaded');
         };

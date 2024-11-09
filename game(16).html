@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Math - Game 16</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://fritmaster.netlify.app/" allow="fullscreen"></iframe>
+
+    <script>
+        // Ensure iframe can receive focus and handle input
+        const iframe = document.querySelector('iframe');
+        iframe.addEventListener('load', () => {
+            iframe.contentWindow.focus();
+        });
+
+        // Refocus on the iframe with each click to maintain keyboard input
+        document.addEventListener('click', () => {
+            iframe.contentWindow.focus();
+        });
+    </script>
+</body>
+</html>
