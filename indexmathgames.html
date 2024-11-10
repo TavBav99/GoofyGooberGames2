@@ -207,6 +207,145 @@
             <img src="game30.jpg" alt="Game 30">
             <div class="game-title">Slither.io</div>
         </button>
+		<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Math Games</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #665FD1;
+            margin: 0;
+            padding: 20px;
+            filter: blur(2px);
+            transition: filter 0.1s ease;
+        }
+
+        body.loaded {
+            filter: blur(0);
+        }
+
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+
+        .home-button:hover {
+            background-color: #cc0000;
+        }
+
+        h1 {
+            margin-top: 60px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .game-button {
+            width: 150px;
+            text-align: center;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .game-button:hover {
+            transform: scale(1.05);
+        }
+
+        .game-button img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .game-title {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <button class="home-button" onclick="goHome()">Home</button>
+
+    <div class="button-container">
+        <!-- Existing Game Buttons -->
+        <!-- Previous buttons go here... -->
+
+        <!-- New Game Buttons -->
+        <!-- Add new buttons here -->
+        <button class="game-button" onclick="goToGame('game(31).html')">
+            <img src="game31.jpg" alt="Game 31">
+            <div class="game-title">BTD 1</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(32).html')">
+            <img src="game32.jpg" alt="Game 32">
+            <div class="game-title">BTD 2</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(33).html')">
+            <img src="game33.jpg" alt="Game 33">
+            <div class="game-title">BTD 3</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(34).html')">
+            <img src="game34.jpg" alt="Game 34">
+            <div class="game-title">BTD 4</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(35).html')">
+            <img src="game35.jpg" alt="Game 35">
+            <div class="game-title">Mario Kart 64</div>
+        </button>
+        <button class="game-button" onclick="goToGame('game(36).html')">
+            <img src="game36.jpg" alt="Game 36">
+            <div class="game-title">Game Pack</div>
+        </button>
+    </div>
+
+    <script>
+        function goToGame(gameUrl) {
+            document.body.style.filter = 'blur(2px)';
+            setTimeout(function() {
+                window.location.href = gameUrl;
+            }, 100);
+        }
+
+        function goHome() {
+            document.body.style.filter = 'blur(2px)';
+            setTimeout(function() {
+                window.location.href = "indexmath.html";
+            }, 100);
+        }
+
+        window.onload = function() {
+            document.body.classList.add('loaded');
+        };
+    </script>
+</body>
+</html>
+
     </div>
 
     <script>
