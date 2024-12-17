@@ -15,7 +15,7 @@
             height: 100vh;
             background-color: #f4f4f4;
             overflow: hidden;
-        }
+        } 
 
         iframe {
             width: 100%;
@@ -27,6 +27,18 @@
     </style>
 </head>
 <body>
-<iframe src="https://particlelicker.netlify.app/" allow="fullscreen"></iframe>
+<iframe src="https://infinite-craft-clone.vercel.app" allow="fullscreen"></iframe>
+<script>
+        // Ensure iframe can receive focus and handle input
+        const iframe = document.querySelector('iframe');
+        iframe.addEventListener('load', () => {
+            iframe.contentWindow.focus();
+        });
+
+        // Refocus on the iframe with each click to maintain keyboard input
+        document.addEventListener('click', () => {
+            iframe.contentWindow.focus();
+        });
+    </script>
 </body>
 </html>
