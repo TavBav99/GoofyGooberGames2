@@ -6,94 +6,170 @@
     <title>GGG - Unblocked</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-family: 'Riffic', Arial, sans-serif;
-            background: linear-gradient(135deg, #ff5b00, #fff700);
+        /* Global Reset */
+        * {
             margin: 0;
-            padding: 20px;
-            transition: filter 0.2s ease-in-out;
-            filter: blur(2px);
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        body.loaded {
-            filter: blur(0);
-        }
-
-        .home-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 10px 25px;
-            font-size: 16px;
-            font-weight: bold;
-            background: #FF4D4D;
+        /* Body Styling */
+        body {
+            align-items: center;
+            font-family: 'Arial', sans-serif;
             color: #fff;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        .home-button:hover {
-            background: #CC0000;
-            transform: scale(1.05);
-        }
-
-        h1 {
-            margin: 20px 0;
-            font-size: 2.5rem;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-        }
-
-        .button-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            width: 100%;
-            max-width: 1200px;
-            margin-top: 30px;
-        }
-
-        .game-button {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            background-color: #063a4d;
+            background-image:
+                /* Hexagonal Grid */
+                radial-gradient(circle, rgba(30, 35, 25, 0.5) 50%, transparent 50%) 0 0,
+                radial-gradient(circle, rgba(30, 35, 25, 0.5) 50%, transparent 50%) 25px 25px,
+                radial-gradient(circle, rgba(30, 35, 25, 0.5) 50%, transparent 50%) 50px 50px,
+                radial-gradient(circle, rgba(30, 35, 25, 0.5) 50%, transparent 50%) 75px 75px,
+                radial-gradient(circle, rgba(30, 35, 25, 0.5) 50%, transparent 50%) 100px 100px;
+            background-size: 150px 150px;
+            background-color: #8F9B7E;
+            animation: hexBackground 15s linear infinite;
+            flex: 1;
+        }
+
+        /* Hexagon Grid Animation */
+        @keyframes hexBackground {
+            0% { background-position: 0 0, 0 0, 0 0, 0 0, 0 0; }
+            100% { background-position: 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%; }
+        }
+
+        /* Header Styling */
+        header {
             text-align: center;
-            background: #FFF;
-            border: 2px solid #DDD;
+            padding: 40px;
+            font-size: 4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #006400;
+            background: linear-gradient(90deg, #9dcf72, #a5b03b, #9e9706);
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                         0 0 20px rgba(255, 255, 255, 0.6);
+            animation: gradientShift 5s infinite linear, glow 2s infinite alternate;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 
+                      0 0 20px rgba(255, 255, 255, 0.4); }
+            100% { text-shadow: 0 0 15px rgba(255, 255, 255, 1), 
+                       0 0 30px rgba(255, 255, 255, 0.8); }
+        }
+
+        header:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 1), 
+                         0 0 40px rgba(255, 255, 255, 0.9);
+        }
+
+        /* Main Container */
+        .main-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Game Button Styling */
+        .game-button {
+            width: 280px;
+            height: 350px;
             border-radius: 15px;
-            padding: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.4s, box-shadow 0.4s;
+            background: linear-gradient(145deg, #111, #444);
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
         }
 
         .game-button:hover {
             transform: translateY(-10px);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
 
         .game-button img {
             width: 100%;
             height: auto;
-            max-width: 150px;
-            border-radius: 10px;
+            object-fit: cover;
         }
 
         .game-title {
-            margin-top: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #006400;
+            padding: 15px 10px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            border-top: 2px solid #006400;
+            width: 100%;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .game-button:hover .game-title {
+            color: #ff4500;
+            text-shadow: 0 0 10px #ff4500, 0 0 20px #ffdd00;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
             font-size: 1rem;
-            color: #333;
+            background: linear-gradient(to right, #232526, #414345);
+            color: #ccc;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        footer a {
+            color: #ffdd00;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #ff4500;
+        }
+
+        /* Invisible YouTube Video */
+        iframe {
+            width: 1px;
+            height: 1px;
+            border: none;
         }
     </style>
 </head>
 <body class="loaded">
-    <h1>Goofy Goober - UBG</h1>
+    <header>Goofy Goober - UBG</header>
+
+	
     <div class="button-container">
         <!-- Existing Game Buttons -->
         <button class="game-button" onclick="goToGame('game(1).html')">
@@ -230,12 +306,28 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-family: Arial, sans-serif;
-            background-color: #665FD1;
             margin: 0;
             padding: 20px;
             filter: blur(2px);
             transition: filter 0.1s ease;
+        background-color: #a8bfc9;
+            background-image:
+                /* Hexagonal Grid */
+                radial-gradient(circle, rgba(30, 35, 25, 0.5) 50%, transparent 50%) 0 0,
+                radial-gradient(circle, rgba(30, 35, 25, 0.5) 50%, transparent 50%) 25px 25px,
+                radial-gradient(circle, rgba(30, 35, 25, 0.5) 50%, transparent 50%) 50px 50px,
+                radial-gradient(circle, rgba(30, 35, 25, 0.5) 50%, transparent 50%) 75px 75px,
+                radial-gradient(circle, rgba(30, 35, 25, 0.5) 50%, transparent 50%) 100px 100px;
+            background-size: 150px 150px;
+            background-color: #063a4d;
+            animation: hexBackground 15s linear infinite;
+            flex: 1;
+        }
+
+        /* Hexagon Grid Animation */
+        @keyframes hexBackground {
+            0% { background-position: 0 0, 0 0, 0 0, 0 0, 0 0; }
+            100% { background-position: 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%; }
         }
 
         body.loaded {
@@ -502,6 +594,11 @@
             <div class="game-title">PVZ Scratch</div>
         </button>
     </div>
+	
+	<footer>
+        &copy; 2024 Goofy Goober Games. All rights reserved. <br>
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+    </footer>
 
     <script>
         function goHome() {
